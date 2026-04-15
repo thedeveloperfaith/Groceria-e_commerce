@@ -11,7 +11,8 @@ const AllCard = (props) => {
     <>
     <div className='Main_container'>
         {props.allProducts?.map((product) => (
-            <CardProducts key={product.id} product ={product} />
+          <CardProducts product ={product}/>
+            // <CardProducts key={product.id} product ={product} />
         ))}
       
     </div>

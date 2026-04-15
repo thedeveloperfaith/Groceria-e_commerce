@@ -4,20 +4,21 @@ import AllCard from './AllCard';
 
 
 const AllProducts = () => {
-  const [allProd, setAllProd] = useState(true);
+  // const [allProd, setAllProd] = useState(true);
+  //  const all = () => {
+  //   setAllProd(true)
+  // }
 
+  const [isLoading , setIsLoading] =useState(true)
   const [allProducts, setAllProduct] = useState([]);
-
-  const all = () => {
-    setAllProd(true)
-  }
 
   const getAllProduct = async () => {
     const url =  "https://api.escuelajs.co/api/v1/products";
     try {
       const res = await axios.get(url);
       setAllProduct(res?.data);
-      console.log(res.data);
+      setIsLoading(false)
+      // console.log(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -25,42 +26,19 @@ const AllProducts = () => {
   useEffect(() => {
     getAllProduct();
   }, []);
-
-
-  // const   AllDataApi =() => {
-  //   const [data,setData] = useState([])
-  // }
-
-
-  // const Alldata = async () =>{
-  //   const BaseUrl = "https://api.escuelajs.co/api/v1/products"
-  //   try {
-  //     const res = await axios.get (BaseUrl)
-  //     setData(res?.data);
-  //     console.log(res.data);
-  //   }  catch (error)   {
-  //     con
-  //   }
-
-
-  // }
-
-  
-
   
   return (
     <div>
       <section>
-        <button onClick={all}>All</button>
+        {/* <button onClick={all}>All</button> */}
+        {isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <AllCard allProducts={allProducts} /> 
+        )}
       </section>
-
-      { allProd? (
-      <AllCard allProducts={allProducts} /> 
-    ): null}
-     </div>
-  
-  )
-  
+    </div>
+  ) 
 };
 
 export default AllProducts

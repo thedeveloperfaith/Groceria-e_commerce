@@ -74,8 +74,6 @@ const CheckOutPage = () => {
                     <button> Bank transfer</button>
                   </div>
 
-                  <div className='payment_card'>
-                    <main className='payment_form'>
                       <div className='input_group'>
                         <p>Card number</p>
                         <input type="number"  placeholder="1234 5678 9012 3456"/>
@@ -95,17 +93,51 @@ const CheckOutPage = () => {
                           <input type="number"  placeholder="............."/>
                         </div>
                       </div>
-                    </main>
-                    <button className='place_order'>Place order</button>
-                  </div>
-                  
-
-
-
+                    <button className='place_order'>
+                      Place order
+                    </button>
                 </div>
               </article>
 
-              <aside className='checkoutpage_all_sections_body_left'></aside>
+              <aside className='checkoutpage_all_sections_body_left'>
+                <div className="order_summary">
+                    <h3>
+                      Order Summary
+                    </h3>
+
+                    <div className="summary_item">
+                     <span>Yam - Grade B</span>
+                     <span>₦20,000</span>
+                    </div>
+
+                   <div className="summary_item">
+                    <span>Rice - 5kg</span>
+                    <span>₦8,500</span>
+                   </div>
+
+                   <div className="summary_item">
+                     <span>Beans - 2kg</span>
+                     <span>₦6,000</span>
+                   </div>
+
+                   <hr />
+
+                  <div className="summary_item">
+                    <span>Subtotal</span>
+                    <span>₦34,500</span>
+                   </div>
+
+                   <div className="summary_item">
+                     <span>Delivery</span>
+                     <span>₦1,500</span>
+                   </div>
+
+                   <div className="summary_item total">
+                     <span>Total</span>
+                     <span>₦36,500</span>
+                   </div>
+                </div>
+              </aside>
             </div>
 
 

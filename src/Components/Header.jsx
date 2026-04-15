@@ -18,12 +18,12 @@ const Header = () => {
             </div>
             <div className='middle_Input'>
                 <input type="text" placeholder='Search for food items' className='food' />
-               <Button name="Search" className="search"/>
+               <Button onclick={() => navigate ("/")}name="Search" className="search"/>
             </div>
         </div>
         <div className='right_Header'>
-            <Button name="Register" className="register"/>
-            <Button name="Login" className="login"/>
+            <Button onclick={() => navigate ("/register")} name="Register" className="register"/>
+            <Button onclick={() => navigate ("/signUp")} name="Login" className="login"/>
         </div>
       </section>
     </header>

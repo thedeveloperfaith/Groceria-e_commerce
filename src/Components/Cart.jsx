@@ -32,21 +32,25 @@ const Cart = () => {
                 </div>
 
                 <div className='quantity_section'>
+                    <div className='qty'>
+                        <p>Quantity </p>
+                    </div>
+
                     <div className='Quantity_number'>
                        <div className='minus'>-</div>
-                       <span>1</span>
+                       <span className='number'>1</span>
                        <div className='plus'>+</div>
                     </div>
 
                     <div className='button_section'>
                       <button className='more_items'>Add more items</button>
                     </div>
+                </div>
 
-                    <div className='price_section'>
-                       <p>#900:00</p>
-                       <p>#900:00</p>
-                       <button className='Remove'>Remove</button>
-                   </div>
+                <div className='price_section'>
+                    <p>#900:00</p>
+                    <p>#900:00</p>
+                    <button className='Remove'>Remove</button>
                 </div>
 
                 <div>

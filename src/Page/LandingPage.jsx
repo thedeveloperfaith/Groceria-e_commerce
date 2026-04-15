@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../Components/Header'
-import DetailedPage from "../Components/DetailedPage"
 import Hero from '../Components/Hero'
 import Cart from "../Components/Cart"
 import AllProducts from '../Components/AllProducts'
@@ -11,10 +10,10 @@ const LandingPage = () => {
     <>
       {/* <Header/> */}
       {/* <DetailedPage/> */}
-      {/* <Hero/> */}
-      {/* <AllProducts/> */}
+      <Hero/>
+      <AllProducts/>
       {/* <TestAPI/> */}
-      {/* <Cart/> */}
+      <Cart/>
       <CheckOutPage/>
     </>
   )
