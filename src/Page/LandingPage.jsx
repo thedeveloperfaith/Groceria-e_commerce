@@ -8,9 +8,9 @@ import CheckOutPage from '../Components/CheckOutPage'
 const LandingPage = () => {
   return (
     <>
-      {/* <Header/> */}
+      <Header/>
       {/* <DetailedPage/> */}
-      <Hero/>
+      {/* <Hero/> */}
       <AllProducts/>
       {/* <TestAPI/> */}
       <Cart/>

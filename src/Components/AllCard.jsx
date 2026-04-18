@@ -9,10 +9,9 @@ const AllCard = (props) => {
 
   return (
     <>
-    <div className='Main_container'>
-        {props.allProducts?.map((product) => (
-          <CardProducts product ={product}/>
-            // <CardProducts key={product.id} product ={product} />
+    <div className='main_Container'>
+        {props.allProducts?.map((product) => ( 
+             <CardProducts key={product.id} product ={product} />
         ))}
       
     </div>

@@ -1,26 +1,46 @@
-import React, { Children } from 'react'
-import { AppContext } from './AppContext'
+import React, { createContext, useReducer } from 'react';
 
-const AppProvider = ({children}) => {
+export const AppContext = createContext(null);
+
+const AppProvider = ({ children }) => {
+
   const initialValue = [];
-  const cartReducer = (state , action)  => {
+
+  const cartReducer = (state, action) => {
     switch (action.type) {
-      case "ADD_TO_CART":
-      return [... state, action.payload] ;
-      break;
+      case "ADD_TO_CART": {
+        const existingInCart = state.findIndex(
+          item => item.id === action.payload.id
+        );
+
+        if (existingInCart === -1) {
+          const newItem = { ...action.payload, quantity: 1 };
+          return [...state, newItem];
+        } else {
+          const updatedCart = [...state];
+          updatedCart[existingInCart] = {
+            ...updatedCart[existingInCart],
+            quantity: updatedCart[existingInCart].quantity + 1
+          };
+          return updatedCart;
+        }
+      }
+
+      case "REMOVE_FROM_CART":
+        return state.filter(item => item.id !== action.payload);
 
       default:
-        break;
+        return state;
     }
   };
 
-  const [cart, dispatch] = useReducer (cartReducer , initialValue);
-  console.log(cart)
+  const [cart, dispatch] = useReducer(cartReducer, initialValue);
+
   return (
-    <AppContext.Provider value={{ cart, dispatch}}>
-        {Children}
+    <AppContext.Provider value={{ cart, dispatch }}>
+      {children}
     </AppContext.Provider>
-  )
-}
+  );
+};
 
 export default AppProvider

@@ -13,12 +13,13 @@ const AllProducts = () => {
   const [allProducts, setAllProduct] = useState([]);
 
   const getAllProduct = async () => {
-    const url =  "https://api.escuelajs.co/api/v1/products";
+    // const url =  "https://api.escuelajs.co/api/v1/products";
+    const url = "https://api.escuelajs.co/api/v1/products"
     try {
       const res = await axios.get(url);
       setAllProduct(res?.data);
       setIsLoading(false)
-      // console.log(res.data);
+      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
