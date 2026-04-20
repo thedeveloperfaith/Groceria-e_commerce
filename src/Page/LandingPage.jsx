@@ -4,17 +4,18 @@ import Hero from '../Components/Hero'
 import Cart from "../Components/Cart"
 import AllProducts from '../Components/AllProducts'
 import CheckOutPage from '../Components/CheckOutPage'
+import DetailedPage from "../Page/DetailedPage"
 
 const LandingPage = () => {
   return (
     <>
       <Header/>
-      {/* <DetailedPage/> */}
+      <DetailedPage/>
       {/* <Hero/> */}
-      <AllProducts/>
+      {/* <AllProducts/> */}
       {/* <TestAPI/> */}
-      <Cart/>
-      <CheckOutPage/>
+      {/* <Cart/> */}
+      {/* <CheckOutPage/> */}
     </>
   )
 }
